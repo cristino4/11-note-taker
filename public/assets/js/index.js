@@ -33,7 +33,8 @@ const getNotes = () =>
     },
   });
 
-const saveNote = (note) => 
+//had to add extra curly brackets for promise to resolve
+const saveNote = (note) => {
   fetch('/api/notes', {
     method: 'POST',
     headers: {
@@ -41,6 +42,8 @@ const saveNote = (note) =>
     },
     body: JSON.stringify(note),
   });
+}
+
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
