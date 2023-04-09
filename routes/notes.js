@@ -11,6 +11,7 @@ notes.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, '../db/db.json'));
 });
 
+//post to save note. uses uniqid to assign ID to the note
 notes.post('/', (req,res) => {
     console.info(`Received ${req.method} request for ${req.path} to save note`);
     const dbData = fs.readFileSync('./db/db.json','utf8', (err,data) => {
@@ -34,6 +35,7 @@ notes.post('/', (req,res) => {
     });
 });
 
+//delets note using URL id parameter.
 notes.delete('/:id', (req,res) => {
     const noteId = req.params.id;
     console.info(`Received ${req.method} request for ${req.path} to delete note ${noteId}`);

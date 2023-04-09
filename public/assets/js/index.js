@@ -33,7 +33,7 @@ const getNotes = () =>
     },
   });
 
-const saveNote = (note) =>
+const saveNote = (note) => 
   fetch('/api/notes', {
     method: 'POST',
     headers: {
@@ -66,15 +66,19 @@ const renderActiveNote = () => {
   }
 };
 
-const handleNoteSave = () => {
+const handleNoteSave = async () => {
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
   };
-  saveNote(newNote).then(() => {
-    getAndRenderNotes();
-    renderActiveNote();
-  });
+  //.then does not work. need to use async await
+  // saveNote(newNote).then(() => {
+  //   getAndRenderNotes();
+  //   renderActiveNote();
+  // });
+  await saveNote(newNote)
+  getAndRenderNotes();
+  renderActiveNote();
 };
 
 // Delete the clicked note
