@@ -14,6 +14,6 @@ The application is also available on its published site here [App Site](https://
 
 
 ## Screenshots of the application
-![Screenshot of the hompage](11-note-taker/images/homepage.png)
-![Screenshot of the notes page](11-note-taker/images/notes-page.png)
+![Screenshot of the hompage](/images/homepage.png)
+![Screenshot of the notes page](/images/notes-page.png)
 
